@@ -1,0 +1,314 @@
+:root {
+  --seagreen: #00314c;
+  --blue: #3f417c;
+  --greenblue: #009697;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+.desc-container-desktop {
+  position: absolute;
+  bottom: 0;
+  min-height: 15vh;
+  height: fit-content;
+  width: 100%;
+  background-color: #fff;
+  margin-left: 0px;
+  /* margin-top: 8%; */
+
+}
+
+.desc-m {
+  position: absolute;
+  bottom: 0;
+}
+
+.imgDish-l {
+  width: 100%;
+  height: 80vh;
+}
+
+#named {
+  background-color: #fff;
+  padding-top: 0;
+}
+
+.imgDish-m {
+  width: 100%;
+  height: 50vh;
+  margin-left: 12px;
+}
+
+.des {
+  border-radius: 0px !important;
+  border: none !important;
+  color: var(--greenblue);
+}
+
+.price {
+  background-color: var(--greenblue);
+}
+
+.btnLang {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.logodiv {
+  height: 27vh;
+}
+
+.snav {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: calc(73vh - 50px);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.snav::-webkit-scrollbar {
+  width: 3px !important;
+}
+
+.snav::-webkit-scrollbar-track {
+  background-color: #03679e6b;
+}
+
+.snav::-webkit-scrollbar-thumb {
+  background-color: var(--greenblue);
+  height: 5vh;
+}
+
+.dish {
+  padding-left: 20px !important;
+  cursor: pointer;
+  /* font-weight: bold; */
+  color: var(--greenblue) !important;
+  /* Text color for the dishes */
+  padding-right: 20px !important;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 10px;
+}
+
+.dish:hover {
+  background-color: #ede5e5;
+}
+
+.flex {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+  border: none !important;
+  box-shadow: none;
+  border-radius: 0 !important;
+}
+
+.bg-grb {
+  background-color: var(--seagreen) !important;
+}
+
+.bg-lg {
+  background-color: var(--greenblue) !important;
+}
+
+.bg-gr {
+  background-color: #fbfafa !important;
+}
+
+.bg-pur {
+  background-color: var(--blue) !important;
+}
+
+.accordion-button {
+  background-color: #fbfafa;
+}
+
+.accordion-button:focus {
+  background-color: #aeaeae;
+  color: var(--seagreen);
+}
+
+.imgDish {
+  display: none;
+}
+
+#cont-d {
+  display: none;
+}
+
+.des-l {
+  color: var(--greenblue);
+  border: none !important;
+  /* position: absolute; */
+}
+
+#named {
+  color: var(--blue);
+  /* text-align: left; */
+  width: 100%;
+}
+
+.price-l {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: var(--greenblue);
+}
+
+#itemPrice {
+  min-height: 15vh;
+}
+
+#loader {
+  position: absolute;
+  top: 0;
+  height: calc(100vh);
+  width: 100vw;
+  z-index: 1000;
+  display: none;
+}
+
+.pump {
+  animation: beat 2s linear infinite;
+}
+
+@keyframes beat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.mob {
+  display: none !important;
+}
+
+
+
+/*  */
+.flexs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c {
+  background-color: var(--greenblue);
+  color: white;
+}
+
+.logo {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--seagreen);
+}
+
+.slide::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  /* padding-left: 20px; */
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.slide .btn {
+  display: inline-block;
+}
+
+.btn-primary {
+  margin: 0px 5px;
+}
+
+.slider-button {
+  background-color: white;
+  border: 2px solid #e2e2e2;
+  margin: 0px 5px;
+  color: #b3b3b3;
+  border-radius: 9px;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* @media (min-width:767px) and (max-height:450px) {
+
+  .desc-container-desktop {
+    bottom: 10vh;
+    43px
+  }
+} */
+
+@media (max-height: 450px) {
+  .desc-container-desktop {
+    font-size: 0.8rem;
+  }
+
+  .desc-m {
+    position: relative;
+  }
+
+  /* .logo{
+    height: 25vh;
+  } */
+}
+
+@media (max-width: 767px) {
+  .snav {
+    display: none !important;
+  }
+
+  .mob {
+    display: block !important;
+  }
+
+  html,
+  body {
+    /* overflow-y: hidden !important; */
+    overflow-x: hidden !important;
+  }
+}
+
+.loader-visible {
+  overflow: hidden !important;
+}
+
+.loader-hidden {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
+
+@media (min-height: 450px) {
+
+  html,
+  body {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- <script src="switchWindow.js"></script> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function switchPage() {
+            const screenWidth = window.innerWidth;
+
+            // Choose the HTML file based on screen width
+            const pageToLoad = screenWidth < 768 ? 'mobile.html' : 'index-ar.html';
+
+            // Load the chosen HTML file only if the window size has changed significantly
+            if (window.location.href.indexOf(pageToLoad) === -1) {
+                window.location.href = pageToLoad;
+            }
+        }
+
+        // Call the switchPage function when the window is resized
+        window.addEventListener('resize', switchPage);
+
+        // Initial call to switchPage on page load
+        switchPage();
+
+    </script>
+    <script>
+        window.onload = function () {
+            window.location.href = "#cont-d";
+        };
+        if (window.location.href = "#cont-d") {
+            console.log("donehref")
+        }
+    </script>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader" class="text-center ">
+        <div class="flex bg-grb w-100 h-100">
+            <img src="img/logo-eng-removebg-preview.png" alt="" class="logoimg pump" width="300px">
+        </div>
+    </div>
+
+    <!-- topdiv -->
+    <div class="flexs p-1 px-0" style="height: 50px; background-color: #fbfafa; position: absolute; top: 0;">
+        <div class="mt-1 text-left mb-0 flex" style="justify-content: start; width: 60vw; " id="taxBar">
+            <p class="fw-bold ps-3 mb-0 text-start" style="font-size: medium;" id="topText"></p>
+        </div>
+
+        <div class="mt-1 px-3 mb-1"
+            style="width: 40vw; display:flex;  justify-content: end !important; align-items: center;" id="languageBtns">
+            <a href="index.html"
+                class="btn-1 c px-4 py-2 text-decoration-none rounded-2 border border-white fw-lighter">English</a>
+            <a class="btn-1 c px-4 py-2 rounded-2 border border-white fw-lighter text-decoration-none"
+                href="index-ar.html">عربي</a>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <!-- topdiv end -->
+
+    <div class="container-fluid ps-0" style="margin-top: 50px;">
+
+        <div class="row ">
+            <div class="col-md-4 pe-0" id="menuBar">
+                <a href="index-ar.html">
+                    <div class="bg-grb logodiv flex">
+                        <img src="img/logo-eng-removebg-preview.png" alt="" class="logoimg" style="height: 27vh;">
+                        <!-- <img src="img/logo-arb.jpg" width="50%" alt=""> -->
+                    </div>
+                </a>
+
+
+                <div class="accordion snav" id="accordionExample">
+                    <div id="accordionContainer"></div>
+
+                </div>
+                <!-- <div id="accordionContainer"></div> -->
+            </div>
+
+            <div class="col-md-8 px-0 text-center position-relative col2" id="itemInfo">
+                <img class="mt-0 imgDish imgDish-l" id="image-dish" src="" alt="">
+                <!-- <video src="img/main video.mp4" id="vid" autoplay  muted class="mt-0 h-100 imgDish-l"></video> -->
+                <img alt="abc" src="img/mainimg.jpg" id="vid" class="mt-0 h-100 imgDish-l"></img>
+
+                <div class=" " id="cont-d">
+                    <div class=" row desc-container-desktop  flex" style="left: 0; justify-content: space-between;">
+                        <div class="col-md-10 h-100" id="itemDesc">
+                            <div class="des-l h-100  flex p-3 px-2 text-start" style="flex-direction: column;">
+                                <div id="named" class="px-1 fw-bold"></div>
+                                <div id="des" class="w-100 px-1"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 me-0 pe-0 h-100 " style="position: relative;bottom: 0; left: 12px;"
+                            id="itemPrice">
+                            <div class="price-l flex h-100 p-3 px-2 fw-bold text-light " id="price"
+                                style="left: -12px;">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mob px-0">
+                <div class="logo" style="height: 10vh;">
+                    <img src="img/logo-eng-removebg-preview.png" class="logoimg" class="" alt="logo">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  -->
+    <!-- Bootstrap JS and dependencies -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Include the gapi library -->
+
+
+    <!-- accordian -->
+    <script>
+        $(document).ready(function () {
+            document.getElementById('topText').innerHTML = "جميع الأسعار شاملة 7% رسوم بلدية و5% ضريبة القيمة المضافة";
+
+        });
+
+
+        function createAccordionItem(item) {
+            const itemName = selectedLanguage === 'arabic' ? item.itemNameArabic : item.itemNameEnglish;
+            let imgsrc = item.image;
+            let arb = extractTextFromQuotedString(item.itemDescriptionArabic);
+            let eng = extractTextFromQuotedString(item.itemDescriptionEnglish);
+            let price = item.amount;
+            // console.log(itemName)
+
+
+            return `
+                <div class="dish" onclick="changeImgSrc('${imgsrc}','${eng}','${arb}','${price}','${itemName}')">
+                    <p>${itemName}</p>
+                    <p>${price}</p>
+            </div>
+        `;
+
+
+        }
+
+
+        function extractTextFromQuotedString(str) {
+            if (typeof str === 'string') {
+                return str.trim();
+            } else {
+                return '';
+            }
+        }
+
+        function extractDriveFileId(url) {
+            // Regular expression to match the file ID
+            const regex = /open\?id=([\w-]+)/;
+
+            // Use the regex to extract the file ID
+            const match = url.match(regex);
+
+            // Check if a match is found
+            if (match && match[1]) {
+                return match[1];
+            } else {
+                console.error('Invalid Google Drive URL');
+                return null;
+            }
+        }
+
+        function changeImgSrc(fullUrl, itemDescriptionEnglish, itemDescriptionArabic, amount, name) {
+            // check and hide video
+
+            const vid = document.getElementById('vid');
+            if (vid.style.display = "block") {
+
+                vid.style.display = "none"
+                vid.muted = "true";
+                document.getElementById("image-dish").style.display = "block";
+                document.getElementById("cont-d").style.display = "block";
+                //console.log('blocked');
+            }
+
+            // Extract the file ID from the Google Drive URL
+            const fileId = extractDriveFileId(fullUrl);
+
+            // Check if the file ID is valid
+            if (fileId) {
+                // Construct the new image source URL
+                const newImgSrc = `https://drive.google.com/uc?id=${fileId}`;
+
+                // Set the image source
+                document.getElementById("image-dish").src = newImgSrc;
+
+            }
+
+            document.getElementById('named').innerHTML = name;
+            if (selectedLanguage == 'english') {
+                document.getElementById('des').innerHTML = itemDescriptionEnglish;
+            } else if (selectedLanguage == 'arabic') {
+                document.getElementById('des').innerHTML = itemDescriptionArabic;
+            }
+            document.getElementById('price').innerHTML = amount + '<br> درهم';
+        }
+
+        function removeUnderscores(str) {
+            if (typeof str === 'string') {
+                // Use regular expression to replace underscores with spaces
+                return str.replace(/_/g, ' ');
+            } else {
+                // If the input is not a string, return the input as is
+                return str;
+            }
+
+        }
+
+        // Function to replace spaces with underscores
+        function formatId(id) {
+            // Extract language code from the ID (if present)
+            let languageCode = "";
+            const match = id.match(/-(en|ar)$/);
+            if (match) {
+                languageCode = match[1];
+                id = id.slice(0, -languageCode.length - 1); // Remove language code from ID
+            }
+
+            // Replace spaces with underscores and append language code if needed
+            if (selectedLanguage !== 'english' && languageCode !== selectedLanguage) {
+                id = `${id}-${selectedLanguage}`;
+            }
+            return id.replace(/\s+/g, '_');
+        }
+
+        // Function to dynamically create accordion for each selectMenuItem
+        function createAccordion(menuItem, items) {
+            const accordion = document.createElement('div');
+            accordion.classList.add('accordion-item');
+
+            // Extract and format menu item based on selected language
+            const { strEng, strArb } = separateMenuItems(menuItem);
+            const formattedMenuItem = selectedLanguage === 'english' ? strEng : strArb;
+
+            accordion.innerHTML = `
+        <h2 class="accordion-header bg-gr" id="heading${formatId(formattedMenuItem)}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse${formatId(formattedMenuItem)}" aria-expanded="false" aria-controls="collapse${formatId(formattedMenuItem)}">
+                ${removeUnderscores(formattedMenuItem)}
+            </button>
+        </h2>
+        <div id="collapse${formatId(formattedMenuItem)}" class="accordion-collapse collapse" aria-labelledby="heading${formatId(formattedMenuItem)}"
+            data-bs-parent="#accordionContainer">
+            <div class="accordion-body p-0">
+                ${items.map(item => createAccordionItem(item)).join('')}
+            </div>
+        </div>
+    `;
+
+            return accordion;
+
+        }
+
+        // Function to separate English and Arabic parts of the menu item
+        function separateMenuItems(menuItem) {
+            const [strEng, strArb] = menuItem.split('-');
+            return { strEng: strEng.trim(), strArb: strArb.trim() };
+        }
+
+        // Default language is English
+        let selectedLanguage = 'arabic';
+
+
+        function interchangeDivs(language, x, y) {
+            const div1 = document.getElementById(x);
+            const div2 = document.getElementById(y);
+
+            // console.log(`Element with ID ${x}:`, div1);
+            // console.log(`Element with ID ${y}:`, div2);
+
+            if (language === 'arabic') {
+                // Append Arabic content before English content
+                div1.parentNode.insertBefore(div2, div1);
+            } else {
+                // Append English content before Arabic content
+                div2.parentNode.insertBefore(div1, div2);
+            }
+        }
+
+        // Function to set the selected language
+        function setLanguage(language) {
+            document.getElementById('loader').style.display = 'block';
+
+            // interchangeDivs(language, 'menuBar', 'itemInfo');
+            // interchangeDivs(language, 'itemDesc', 'itemPrice');
+            // interchangeDivs(language, 'taxBar', 'languageBtns');
+
+            selectedLanguage = language;
+            const vid = document.getElementById('vid');
+            if (vid.style.display = "none") {
+
+                vid.style.display = "block"
+                vid.muted = "true";
+                document.getElementById("image-dish").style.display = "none";
+                document.getElementById("cont-d").style.display = "none";
+
+                //console.log('blocked');
+            }
+
+            const logoimgs = document.getElementsByClassName('logoimg');
+
+            var topTextArb = "جميع الأسعار شاملة 7% رسوم بلدية و5% ضريبة القيمة المضافة";
+            var topTextEng = "All prices are inclusive of 7% municipality fees and 5% VAT";
+            const topText = document.getElementById('topText');
+            const btnDiv = document.getElementById('languageBtns');
+
+            if (language === "arabic") {
+                for (const logoimg of logoimgs) {
+                    logoimg.src = 'img/logo-arb-removebg-preview.png';
+                }
+                topText.innerHTML = topTextArb;
+                topText.style.textAlign = 'right';
+                // btnDiv.style.justifyContent = 'flex-start';
+            } else if (language === "english") {
+                for (const logoimg of logoimgs) {
+                    logoimg.src = 'img/logo-eng-removebg-preview.png';
+                }
+                topText.innerHTML = topTextEng;
+                topText.style.textAlign = 'left';
+                // btnDiv.style.justifyContent = 'flex-end';
+            }
+            updateAccordionContent();
+
+        }
+
+        // Function to dynamically update accordion content based on the selected language
+        function updateAccordionContent() {
+            // Fetch data from the API
+            fetch('https://script.google.com/macros/s/AKfycbxzp9AkHIhR7vkHmVRDdvEvWIdqXxDbNkVwPiuESf8EvEFK5SmbZrDIZpF_4sOhD9Vo/exec')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Hide loader when data is fetched
+                    document.getElementById('loader').style.display = 'none';
+                    // document.getElementById('vid').muted='false';
+
+                    // console.log(data);
+                    // Group data by selectMenuItem
+                    const groupedData = {};
+                    data.forEach(item => {
+                        const formattedMenuItem = formatId(item.selectMenuItem);
+                        if (!groupedData[formattedMenuItem]) {
+                            groupedData[formattedMenuItem] = [];
+                        }
+                        groupedData[formattedMenuItem].push(item);
+                    });
+
+                    // Get the container for accordion
+                    const accordionContainer = document.getElementById('accordionContainer');
+
+                    // Clear existing content
+                    accordionContainer.innerHTML = '';
+
+                    // Iterate through the grouped data and create accordions for each selectMenuItem
+                    Object.keys(groupedData).forEach(menuItem => {
+                        const accordion = createAccordion(menuItem, groupedData[menuItem]);
+                        accordionContainer.appendChild(accordion);
+                    });
+                })
+                .catch(error => {
+                    // Hide loader and show error message
+                    document.getElementById('loader').style.display = 'none';
+                    console.error('Error fetching JSON:', error);
+                });
+        }
+
+        // Initial call to fetch and display data in the default language
+        // updateAccordionContent();
+
+        // Show loader while fetching data
+        document.getElementById('loader').style.display = 'block';
+        if (window.matchMedia('(min-width: 767px) and (max-height: 450px)').matches) {
+            // Apply styles when loader is hidden only for the specified media query
+            document.body.classList.add('loader-visible');
+        }
+
+        // Fetch data from the API
+        fetch('https://script.google.com/macros/s/AKfycbxzp9AkHIhR7vkHmVRDdvEvWIdqXxDbNkVwPiuESf8EvEFK5SmbZrDIZpF_4sOhD9Vo/exec')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Store the fetched data
+                menuData = data;
+                // caching the images
+                function preloadImages(apiResponse) {
+                    if (!preloadImages.list) {
+                        preloadImages.list = [];
+                    }
+                    var list = preloadImages.list;
+
+                    // Extract image URLs and cache them
+                    for (var i = 0; i < apiResponse.length; i++) {
+                        var img = new Image();
+                        img.onload = function () {
+                            var index = list.indexOf(this);
+                            if (index !== -1) {
+                                // Remove image from the array once it's loaded
+                                // for memory consumption reasons
+                                list.splice(index, 1);
+                            }
+                        }
+
+                        // Extract the file ID from the Google Drive URL
+                        const fileId = extractDriveFileId(apiResponse[i].image);
+
+                        // Check if the fileId is valid before setting the src
+                        if (fileId) {
+                            img.src = `https://drive.google.com/uc?id=${fileId}`;
+                            list.push(img);
+                        }
+                    }
+                    console.log('Images cached');
+                }
+
+                preloadImages(menuData);
+
+                // Hide loader when data is fetched
+                document.getElementById('loader').style.display = 'none';
+                if (window.matchMedia('(min-width: 767px) and (max-height: 450px)').matches) {
+                    document.body.classList.remove('loader-visible');
+                    document.body.classList.add('loader-hidden');
+                }
+
+                // Group data by selectMenuItem
+                const groupedData = {};
+                data.forEach(item => {
+                    const formattedMenuItem = formatId(item.selectMenuItem);
+                    if (!groupedData[formattedMenuItem]) {
+                        groupedData[formattedMenuItem] = [];
+                    }
+                    groupedData[formattedMenuItem].push(item);
+                });
+
+                // Get the container for accordion
+                const accordionContainer = document.getElementById('accordionContainer');
+
+                // Clear existing content
+                accordionContainer.innerHTML = '';
+
+                // Iterate through the grouped data and create accordions for each selectMenuItem
+                Object.keys(groupedData).forEach(menuItem => {
+
+                    const accordion = createAccordion(menuItem, groupedData[menuItem]);
+                    accordionContainer.appendChild(accordion);
+                });
+            })
+            .catch(error => {
+                // Hide loader and show error message
+                document.getElementById('loader').style.display = 'none';
+                console.error('Error fetching JSON:', error);
+            });
+    </script>
+
+
+
+
+</body>
+
+</html>
